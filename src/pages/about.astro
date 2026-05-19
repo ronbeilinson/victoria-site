@@ -18,23 +18,25 @@ import Footer from '../components/Footer.astro';
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-start">
 
-        <!-- Headshot -->
+        <!-- Photo -->
         <div class="w-full">
-          <img
-            src="/headshot.JPG"
-            alt="Victoria Tarantino"
-            class="w-full object-cover object-top"
-            style="max-height: 680px;"
-            loading="eager"
-          />
+          <div class="polaroid polaroid-plain mx-auto" style="max-width: 360px;">
+            <img
+              src="/victoria.png"
+              alt="Victoria Tarantino"
+              class="w-full object-cover"
+              style="aspect-ratio: 2/3; object-position: center 20%;"
+              loading="eager"
+            />
+          </div>
         </div>
 
         <!-- Bio -->
         <div class="flex flex-col gap-7 md:pt-2">
 
           <h1
-            class="font-serif text-ink leading-tight font-light"
-            style="font-size: clamp(2.2rem, 5vw, 3.8rem); font-style: italic;"
+            class="signature text-ink leading-none"
+            style="font-size: clamp(2.8rem, 6vw, 5rem);"
           >
             I'm Victoria.
           </h1>
@@ -43,22 +45,21 @@ import Footer from '../components/Footer.astro';
 
           <div class="flex flex-col gap-4 text-ink-mid text-sm font-sans leading-relaxed" style="letter-spacing:0.01em;">
             <p>
-              I'm an event producer based in New York City — and I believe the best events don't just look beautiful, they feel inevitable.
+              I'm an event producer born and raised in New York City, and I believe the best events do more than look beautiful. They create meaningful moments that leave a lasting impression.
             </p>
             <p>
-              I spent five years producing the <span class="text-ink">Sun Valley Conference</span> and the <span class="text-ink">Allen & Co Arizona Conference</span> — two of the most consequential gatherings in media, technology, and finance, where the world's most powerful people come together to shape what's next. Running these events year after year taught me that the detail nobody notices is exactly the one that holds everything together.
+              I spent five years producing the <span class="text-ink">Sun Valley Conference</span> and the <span class="text-ink">Arizona Conference</span>, two of the world's most exclusive gatherings of business, media, technology, and political leaders. Working behind the scenes on these events year after year taught me that the smallest details are often the ones that matter most.
             </p>
             <p>
-              Most recently I've taken my work global as an international event producer for <span class="text-ink">Endeavor Global</span>, building brand experiences and executive events across Europe, Asia, and the Americas.
+              Most recently, I took my work global as a Global Events Manager at <span class="text-ink">Endeavor Global</span>, leading executive events, brand experiences, and strategic convenings across Europe, Asia, Africa, and the Americas.
             </p>
             <p>
-              Whether it's a thousand-person conference in the mountains, a brand activation on the streets of New York, or an intimate dinner in Paris — I bring the same obsessive attention to detail and calm under pressure to every single event.
+              Whether it's a thousand-person conference in the mountains, a brand activation in New York City, or my own wedding in the Dominican Republic, I bring the same thoughtful attention to detail, creativity, and calm under pressure to every experience I create.
             </p>
-            <p>I'm now available to bring that experience to you.</p>
           </div>
 
           <div class="flex flex-wrap gap-4 items-center pt-1">
-            <a href="/services" class="btn">View Services</a>
+            <a href="/work" class="btn">See Work</a>
             <a href="/contact" class="arrow-link">
               Get in touch
               <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
@@ -70,15 +71,15 @@ import Footer from '../components/Footer.astro';
           <!-- Stats -->
           <div class="border-t border-rule pt-7 grid grid-cols-3 gap-4 text-center">
             <div>
-              <p class="font-serif text-3xl text-ink font-light" style="font-style:italic;">5+</p>
+              <p class="font-serif text-3xl text-ink font-light" style="font-style:italic;">10+</p>
               <p class="text-ink-light text-[10px] font-sans tracking-widest uppercase mt-1" style="letter-spacing:0.16em;">Years</p>
             </div>
             <div class="border-x border-rule">
-              <p class="font-serif text-3xl text-ink font-light" style="font-style:italic;">3</p>
+              <p class="font-serif text-3xl text-ink font-light" style="font-style:italic;">5</p>
               <p class="text-ink-light text-[10px] font-sans tracking-widest uppercase mt-1" style="letter-spacing:0.16em;">Continents</p>
             </div>
             <div>
-              <p class="font-serif text-3xl text-ink font-light" style="font-style:italic;">100+</p>
+              <p class="font-serif text-3xl text-ink font-light" style="font-style:italic;">50+</p>
               <p class="text-ink-light text-[10px] font-sans tracking-widest uppercase mt-1" style="letter-spacing:0.16em;">Events</p>
             </div>
           </div>
@@ -86,41 +87,40 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- ─── Testimonials ─── -->
+    <!-- ─── More photos ─── -->
+    <!--
+      Add personal / event photos to /public/images/ and update the src values below.
+      Suggested subjects: family, behind-the-scenes at events, travel, candids.
+      Any aspect ratio works — the polaroid frame adapts.
+    -->
     <section class="px-6 md:px-10 py-14 md:py-20 border-t border-rule">
-      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-20">
-
-        <p class="text-[11px] font-sans tracking-widest uppercase text-ink-mid shrink-0" style="letter-spacing:0.18em;">
-          Kind Words
+      <div class="flex items-center gap-6 mb-10">
+        <p class="text-[11px] font-sans text-ink-mid tracking-widest uppercase shrink-0" style="letter-spacing:0.18em;">
+          Beyond the Events
         </p>
+        <div class="rule flex-1"></div>
+      </div>
 
-        <div class="flex flex-col gap-10 flex-1 max-w-lg">
-
-          <div class="flex flex-col gap-3">
-            <p class="font-serif text-ink font-light leading-relaxed" style="font-size:1.15rem; font-style:italic;">
-              &ldquo;Placeholder &mdash; add client quote here. Victoria was the most prepared, calm, and professional producer we&rsquo;ve worked with.&rdquo;
-            </p>
-            <p class="text-ink-light text-xs font-sans" style="letter-spacing:0.04em;">&mdash; Client Name, Company or Event</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7">
+        <!-- Replace src="" with real photo paths, e.g. src="/images/family.jpg" -->
+        {[
+          { alt: 'Family', bg: '#EAE6DF', src: '/family-1.png' },
+          { alt: 'Behind the scenes', bg: '#E4E7E3', src: '/onlocation.png' },
+          { alt: 'On location', bg: '#E7E3EA', src: '/behind the scenes.png' },
+          { alt: 'Personal', bg: '#E3E6E9', src: '/wedding-1.png' },
+        ].map((photo) => (
+          <div class="polaroid polaroid-plain w-full" style="padding: 0.75rem;">
+            {photo.src
+              ? <img src={photo.src} alt={photo.alt} class="w-full object-cover" style="aspect-ratio: 4/5;" />
+              : <div class="w-full flex items-end p-2" style={`aspect-ratio: 4/5; background: ${photo.bg};`}>
+                  <span class="text-[10px] font-sans text-ink-light opacity-60" style="letter-spacing:0.06em;">{photo.alt}</span>
+                </div>
+            }
           </div>
-
-          <div class="flex flex-col gap-3">
-            <p class="font-serif text-ink font-light leading-relaxed" style="font-size:1.15rem; font-style:italic;">
-              &ldquo;Placeholder &mdash; add client quote here. Every single detail was handled perfectly. We didn&rsquo;t worry about a thing.&rdquo;
-            </p>
-            <p class="text-ink-light text-xs font-sans" style="letter-spacing:0.04em;">&mdash; Client Name, Company or Event</p>
-          </div>
-
-          <div class="flex flex-col gap-3">
-            <p class="font-serif text-ink font-light leading-relaxed" style="font-size:1.15rem; font-style:italic;">
-              &ldquo;Placeholder &mdash; add client quote here. She understood exactly what we needed before we even finished explaining it.&rdquo;
-            </p>
-            <p class="text-ink-light text-xs font-sans" style="letter-spacing:0.04em;">&mdash; Client Name, Company or Event</p>
-          </div>
-
-        </div>
-
+        ))}
       </div>
     </section>
+
 
   </main>
 

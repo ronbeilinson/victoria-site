@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+  <!-- C: Woven Canvas — coarser turbulence base + structured weave grid overlay -->
+  <defs>
+    <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.38 0.44" numOctaves="3" seed="12" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+    </filter>
+    <!-- Basket-weave grid: alternating horizontal/vertical thread segments -->
+    <pattern id="weave" width="8" height="8" patternUnits="userSpaceOnUse">
+      <!-- Weft (horizontal threads) -->
+      <rect x="0" y="0" width="4" height="1.2" fill="rgba(0,0,0,0.07)"/>
+      <rect x="4" y="4" width="4" height="1.2" fill="rgba(0,0,0,0.07)"/>
+      <!-- Warp (vertical threads) -->
+      <rect x="4" y="0" width="1.2" height="4" fill="rgba(0,0,0,0.05)"/>
+      <rect x="0" y="4" width="1.2" height="4" fill="rgba(0,0,0,0.05)"/>
+    </pattern>
+  </defs>
+  <!-- Organic noise base -->
+  <rect width="100%" height="100%" filter="url(#noise)" opacity="0.55"/>
+  <!-- Structured weave on top -->
+  <rect width="100%" height="100%" fill="url(#weave)" opacity="0.85"/>
+</svg>

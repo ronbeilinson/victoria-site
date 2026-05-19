@@ -1,0 +1,256 @@
+---
+// Texture comparison preview — visit /texture-preview to compare all options.
+// Delete this page once you've picked an option.
+
+const options = [
+  {
+    id: 'E',
+    name: 'Woven Linen',
+    tagline: 'Structured weave + organic displacement',
+    description: 'A plain-weave grid (alternating weft-over and warp-over cells, each with a directional highlight) distorted by a low-frequency displacement map — the closest to an actual woven fabric I can produce without a real photo.',
+    bg: '#EDE9E1',
+    texture: '/texture-linen.svg',
+    textureSize: '260px 260px',
+    textureOpacity: '0.85',
+    blendMode: 'multiply',
+  },
+  {
+    id: 'A',
+    name: 'Fine Linen',
+    tagline: 'Closest to SJ Bruce',
+    description: 'Tight woven grain with a horizontal thread bias. Very refined and barely perceptible — the texture lives in the background without ever competing with the content.',
+    bg: '#EDEDEA',
+    texture: '/texture-a.svg',
+    textureSize: '220px 220px',
+    textureOpacity: '0.72',
+    blendMode: 'multiply',
+  },
+  {
+    id: 'B',
+    name: 'Natural Linen',
+    tagline: 'Warm & organic',
+    description: 'More visible thread structure with a warm undertone. Reads like raw Belgian linen — you can feel the fabric without it being pronounced.',
+    bg: '#EDE8DF',
+    texture: '/texture-b.svg',
+    textureSize: '240px 240px',
+    textureOpacity: '0.68',
+    blendMode: 'multiply',
+  },
+  {
+    id: 'C',
+    name: 'Woven Canvas',
+    tagline: 'Most tactile',
+    description: 'A structured basket-weave pattern layered over organic noise. The weave is visible — more handmade and craft-forward than the others.',
+    bg: '#E9E3D8',
+    texture: '/texture-c.svg',
+    textureSize: '200px 200px',
+    textureOpacity: '1',
+    blendMode: 'multiply',
+  },
+  {
+    id: 'D',
+    name: 'Delicate Fabric',
+    tagline: 'Whisper-light',
+    description: 'Extremely fine high-frequency grain — almost silky. The background feels dimensional but the texture itself is nearly invisible.',
+    bg: '#F0ECE4',
+    texture: '/texture-d.svg',
+    textureSize: '180px 180px',
+    textureOpacity: '0.65',
+    blendMode: 'multiply',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Texture Preview — Victoria Tarantino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Pinyon+Script&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; }
+
+    .preview-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 48px;
+      overflow: hidden;
+    }
+
+    .preview-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--texture-url);
+      background-size: var(--texture-size);
+      opacity: var(--texture-opacity);
+      mix-blend-mode: var(--blend-mode);
+      pointer-events: none;
+    }
+
+    /* Second pass for layered depth */
+    .preview-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--texture-url);
+      background-size: calc(var(--texture-size) * 0.6);
+      background-position: 37px 19px;
+      opacity: calc(var(--texture-opacity) * 0.4);
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+    .preview-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .option-badge {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(33,30,24,0.45);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .option-name {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      color: #211E18;
+      line-height: 0.95;
+      margin-bottom: 16px;
+    }
+
+    .option-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(33,30,24,0.5);
+      margin-bottom: 28px;
+    }
+
+    .option-description {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: rgba(33,30,24,0.75);
+      line-height: 1.55;
+      max-width: 44ch;
+    }
+
+    /* Sample text block to see how copy reads on the texture */
+    .sample-block {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(33,30,24,0.15);
+    }
+    .sample-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(33,30,24,0.4);
+      margin-bottom: 10px;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .sample-copy {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: rgba(33,30,24,0.6);
+      letter-spacing: 0.01em;
+      line-height: 1.65;
+      max-width: 52ch;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(33,30,24,0.12);
+    }
+
+    /* Floating nav */
+    .sticky-nav {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      gap: 8px;
+      background: rgba(33,30,24,0.85);
+      backdrop-filter: blur(8px);
+      padding: 10px 16px;
+      border-radius: 999px;
+    }
+    .sticky-nav a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 999px;
+      transition: all 0.2s;
+    }
+    .sticky-nav a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.12);
+    }
+  </style>
+</head>
+<body>
+
+  {options.map((opt, i) => (
+    <div>
+      <section
+        id={`option-${opt.id}`}
+        class="preview-section"
+        style={`
+          background-color: ${opt.bg};
+          --texture-url: url('${opt.texture}');
+          --texture-size: ${opt.textureSize};
+          --texture-opacity: ${opt.textureOpacity};
+          --blend-mode: ${opt.blendMode};
+        `}
+      >
+        <div class="preview-inner">
+          <span class="option-badge">Option {opt.id}</span>
+          <h2 class="option-name">{opt.name}</h2>
+          <p class="option-tagline">{opt.tagline}</p>
+          <p class="option-description">{opt.description}</p>
+
+          <div class="sample-block">
+            <p class="sample-label">How body copy reads</p>
+            <p class="sample-copy">
+              I spent five years producing the Sun Valley Conference and the Allen & Co Arizona Conference — two of the most consequential gatherings in media, technology, and finance. Running these events taught me that the detail nobody notices is exactly the one that holds everything together.
+            </p>
+          </div>
+        </div>
+      </section>
+      {i < options.length - 1 && <div class="divider"></div>}
+    </div>
+  ))}
+
+  <!-- Floating jump nav -->
+  <nav class="sticky-nav" aria-label="Jump to option">
+    {options.map((opt) => (
+      <a href={`#option-${opt.id}`}>{opt.id} — {opt.name}</a>
+    ))}
+  </nav>
+
+</body>
+</html>

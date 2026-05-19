@@ -9,131 +9,39 @@ import Footer from '../components/Footer.astro';
 
   <main class="flex-1">
 
-    <!-- ─── Signature name ─── -->
-    <!--
-      Cormorant Garamond italic at ~13vw reads like a real signature — elegant,
-      personal, not a script font. The large size does the heavy lifting.
-    -->
-    <section class="px-6 md:px-10 pt-16 md:pt-20 pb-14 md:pb-20">
+    <!-- ─── Hero ─── -->
+    <section class="px-6 md:px-10 pt-12 md:pt-16 pb-10 md:pb-14 flex flex-col items-center text-center">
       <h1
-        class="font-serif text-ink leading-none"
-        style="
-          font-size: clamp(3.6rem, 13vw, 11.5rem);
-          font-style: italic;
-          font-weight: 300;
-          letter-spacing: -0.01em;
-          line-height: 0.92;
-        "
+        class="signature text-ink"
+        style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1;"
       >
-        Victoria<br />Tarantino
+        Victoria Tarantino
       </h1>
 
-      <!-- Thin rule — sjbruce signature divider -->
-      <div class="rule my-8 md:my-10"></div>
-
-      <!-- Subtitle + location -->
-      <p class="text-ink-mid text-[11px] font-sans tracking-widest uppercase" style="letter-spacing: 0.22em;">
-        Event Architecture &amp; Brand Experiences
-      </p>
-      <p class="text-ink-light text-xs font-sans mt-2" style="letter-spacing: 0.06em;">
-        New York City &nbsp;·&nbsp; Global
+      <p class="text-ink-mid text-[11px] md:text-xs font-sans uppercase mt-5" style="letter-spacing: 0.32em;">
+        Global Events &amp; Experiences
       </p>
     </section>
 
-    <!-- ─── Selected work teaser ─── -->
-    <!--
-      Three lines, pure type — fosteratx style. No images needed yet.
-      Gives the page something to read beyond the name.
-    -->
-    <section class="px-6 md:px-10 py-14 md:py-20 border-t border-rule">
-      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-20">
-
-        <p class="text-[11px] font-sans tracking-widest uppercase text-ink-mid shrink-0" style="letter-spacing:0.18em;">
-          Selected Work
-        </p>
-
-        <div class="flex flex-col divide-y divide-rule flex-1 max-w-xl">
-          {[
-            { name: 'Sun Valley Conference',       type: 'Corporate Conference · Allen & Co',  years: '2019–2023' },
-            { name: 'Allen & Co Arizona',          type: 'Corporate Conference · Allen & Co',  years: '2019–2023' },
-            { name: 'Endeavor Global Events',      type: 'International Events · Endeavor',    years: '2024–Present' },
-          ].map((w) => (
-            <div class="flex items-baseline justify-between gap-6 py-4 group cursor-default">
-              <div>
-                <p class="font-serif text-ink text-lg md:text-xl font-light">{w.name}</p>
-                <p class="text-ink-light text-xs font-sans mt-0.5" style="letter-spacing:0.03em;">{w.type}</p>
-              </div>
-              <span class="text-ink-light text-xs font-sans shrink-0">{w.years}</span>
-            </div>
-          ))}
-          <div class="pt-6">
-            <a href="/gallery" class="arrow-link">
-              View all work
-              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
-                <path d="M1 10L10 1M10 1H3.5M10 1V7.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─── Testimonials placeholder ─── -->
-    <!--
-      Replace placeholder text with real quotes when available.
-      year-round.co style — quotes as content, not decoration.
-    -->
-    <section class="px-6 md:px-10 py-14 md:py-20 border-t border-rule">
-      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-20">
-
-        <p class="text-[11px] font-sans tracking-widest uppercase text-ink-mid shrink-0" style="letter-spacing:0.18em;">
-          Kind Words
-        </p>
-
-        <div class="flex flex-col gap-10 flex-1 max-w-xl">
-
-          <div class="flex flex-col gap-3">
-            <p class="font-serif text-ink font-light leading-snug" style="font-size:1.2rem; font-style:italic;">
-              &ldquo;Placeholder &mdash; add client quote here. Victoria handled everything flawlessly from start to finish.&rdquo;
-            </p>
-            <p class="text-ink-light text-xs font-sans" style="letter-spacing:0.04em;">&mdash; Client Name, Company or Event</p>
-          </div>
-
-          <div class="flex flex-col gap-3">
-            <p class="font-serif text-ink font-light leading-snug" style="font-size:1.2rem; font-style:italic;">
-              &ldquo;Placeholder &mdash; add client quote here. The event was beyond anything we could have imagined.&rdquo;
-            </p>
-            <p class="text-ink-light text-xs font-sans" style="letter-spacing:0.04em;">&mdash; Client Name, Company or Event</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─── Let's Talk CTA ─── -->
-    <!-- year-round.co style footer-adjacent CTA -->
-    <section class="px-6 md:px-10 py-16 md:py-24 border-t border-rule">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-        <h2
-          class="font-serif text-ink font-light leading-none"
-          style="font-size: clamp(2.2rem, 6vw, 5rem); font-style: italic;"
-        >
-          Let's work<br />together.
-        </h2>
-        <div class="flex flex-col gap-3">
-          <a
-            href="mailto:vttarantino@gmail.com"
-            class="font-sans text-ink text-sm hover:opacity-40 transition-opacity duration-200"
-            style="letter-spacing:0.02em;"
+    <!-- ─── Video reel ─── -->
+    <section class="px-6 md:px-10 pb-16 md:pb-24">
+      <div class="w-full max-w-sm mx-auto">
+        <div class="polaroid w-full" style="padding: 0.75rem;">
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            class="w-full block"
+            style="aspect-ratio: 4/5; object-fit: cover;"
           >
-            vttarantino@gmail.com
-          </a>
-          <a href="/contact" class="btn self-start">Start a Project</a>
+            <source src="/reel.mp4" type="video/mp4" />
+            <source src="/reel.mov" type="video/quicktime" />
+          </video>
         </div>
       </div>
     </section>
+
 
   </main>
 

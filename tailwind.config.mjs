@@ -4,13 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: '#FAFAF8',
-        ink: '#0D0D0B',
-        'ink-mid': '#4A4A48',
-        'ink-light': '#8A8A88',
-        rule: '#E2E2E0',
+        paper: '#EDE8DF',
+        'paper-mat': '#F3EFE8',
+        ink: '#211E18',
+        'ink-mid': '#4F4A40',
+        'ink-light': '#8C857A',
+        rule: '#C9C2B4',
+        accent: '#5E6E8E',
       },
       fontFamily: {
+        script: ['Pinyon Script', 'Snell Roundhand', 'cursive'],
         serif: ['Cormorant Garamond', 'Georgia', 'serif'],
         sans: ['DM Sans', 'system-ui', 'sans-serif'],
       },

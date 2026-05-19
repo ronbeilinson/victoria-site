@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+  <defs>
+
+    <!--
+      Plain-weave tile (8×8px):
+      Top-left & bottom-right: weft thread on top → horizontal highlight strip
+      Top-right & bottom-left: warp thread on top → vertical highlight strip
+      Thread boundaries drawn as faint lines at the 4px mark in each axis.
+    -->
+    <pattern id="weave" width="8" height="8" patternUnits="userSpaceOnUse">
+      <!-- Weft over warp → cell (0,0)–(4,4) -->
+      <rect x="0"   y="0"   width="4" height="4" fill="rgba(0,0,0,0.07)"/>
+      <rect x="0"   y="1"   width="4" height="2" fill="rgba(255,255,255,0.035)"/>
+
+      <!-- Warp over weft → cell (4,0)–(8,4) -->
+      <rect x="4"   y="0"   width="4" height="4" fill="rgba(0,0,0,0.045)"/>
+      <rect x="5"   y="0"   width="2" height="4" fill="rgba(255,255,255,0.025)"/>
+
+      <!-- Warp over weft → cell (0,4)–(4,8) -->
+      <rect x="0"   y="4"   width="4" height="4" fill="rgba(0,0,0,0.045)"/>
+      <rect x="1"   y="4"   width="2" height="4" fill="rgba(255,255,255,0.025)"/>
+
+      <!-- Weft over warp → cell (4,4)–(8,8) -->
+      <rect x="4"   y="4"   width="4" height="4" fill="rgba(0,0,0,0.07)"/>
+      <rect x="4"   y="5"   width="4" height="2" fill="rgba(255,255,255,0.035)"/>
+
+      <!-- Thread-boundary shadows -->
+      <line x1="4" y1="0" x2="4" y2="8" stroke="rgba(0,0,0,0.08)" stroke-width="0.6"/>
+      <line x1="0" y1="4" x2="8" y2="4" stroke="rgba(0,0,0,0.08)" stroke-width="0.6"/>
+    </pattern>
+
+    <!--
+      Displacement filter: low-frequency turbulence shifts the weave grid
+      by a few pixels — mimics the natural unevenness of hand-woven cloth.
+    -->
+    <filter id="displace" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022 0.028"
+                    numOctaves="2" seed="9" result="disp"/>
+      <feDisplacementMap in="SourceGraphic" in2="disp"
+                         scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Fine surface noise: simulates individual fiber fuzz on top of the weave -->
+    <filter id="fiber" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7 0.85"
+                    numOctaves="4" seed="2" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+    </filter>
+
+  </defs>
+
+  <!-- 1. Structured weave, organically displaced -->
+  <rect width="100%" height="100%" fill="url(#weave)" filter="url(#displace)" opacity="0.9"/>
+
+  <!-- 2. Surface fiber layer: very light, just for depth -->
+  <rect width="100%" height="100%" filter="url(#fiber)" opacity="0.22"/>
+</svg>

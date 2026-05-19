@@ -44,8 +44,8 @@ const sections = [
     <div class="rule mb-10"></div>
 
     <h1
-      class="font-serif text-ink font-light leading-none mb-16 md:mb-20"
-      style="font-size: clamp(2.4rem, 6vw, 5rem); font-style: italic;"
+      class="signature text-ink leading-none mb-16 md:mb-20"
+      style="font-size: clamp(3rem, 8vw, 6.5rem);"
     >
       Gallery
     </h1>
@@ -68,21 +68,26 @@ const sections = [
               <div class="gallery-item flex flex-col gap-2.5 cursor-default">
                 {item.src
                   ? (
-                    <img
-                      src={item.src}
-                      alt={item.name}
-                      class="gallery-img w-full object-cover"
-                      style="aspect-ratio:4/5;"
-                    />
+                    <div class="polaroid w-full">
+                      <div style="aspect-ratio:4/5;">
+                        <img
+                          src={item.src}
+                          alt={item.name}
+                          class="gallery-img w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
                   ) : (
-                    <div
-                      class="gallery-img w-full"
-                      style={`aspect-ratio:4/5; background:${item.bg};`}
-                    ></div>
+                    <div class="polaroid w-full">
+                      <div
+                        class="gallery-img w-full"
+                        style={`aspect-ratio:4/5; background:${item.bg};`}
+                      ></div>
+                    </div>
                   )
                 }
                 <div>
-                  <p class="text-sm font-sans text-ink leading-snug">{item.name}</p>
+                  <p class="text-[11px] font-sans text-ink uppercase leading-snug mt-1" style="letter-spacing:0.14em;">{item.name}</p>
                   {item.client && (
                     <p class="text-xs font-sans text-ink-light mt-0.5" style="letter-spacing:0.02em;">{item.client}</p>
                   )}

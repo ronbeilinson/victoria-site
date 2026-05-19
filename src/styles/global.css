@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -12,10 +13,42 @@
   body {
     @apply bg-paper text-ink font-sans;
     overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Natural linen SVG texture — two passes for depth */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('/texture-b.svg');
+    background-size: 240px 240px;
+    opacity: 0.68;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('/texture-b.svg');
+    background-size: 150px 150px;
+    background-position: 37px 19px;
+    opacity: 0.28;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body > * {
+    position: relative;
+    z-index: 1;
   }
 
   ::selection {
-    background: rgba(13, 13, 11, 0.1);
+    background: rgba(33, 30, 24, 0.12);
   }
 
   img {
@@ -24,6 +57,39 @@
 }
 
 @layer components {
+
+  /* ─── Formal script display (Pinyon Script) ─── */
+  .signature {
+    @apply font-script text-ink leading-none;
+    font-weight: 400;
+  }
+
+  /* ─── Embossed album photo frame ─── */
+  .polaroid {
+    @apply relative p-3 md:p-4;
+    background: #F7F3EB;
+    border: 1px solid rgba(33, 30, 24, 0.13);
+    border-right-color: rgba(33, 30, 24, 0.2);
+    border-bottom-color: rgba(33, 30, 24, 0.22);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.7),
+      0 3px 10px rgba(33, 30, 24, 0.18),
+      0 8px 24px rgba(33, 30, 24, 0.1),
+      inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  }
+  .polaroid::before {
+    content: '';
+    @apply absolute pointer-events-none;
+    inset: 8px;
+    border: 1px solid rgba(33, 30, 24, 0.14);
+    box-shadow: inset 0 1px 4px rgba(33, 30, 24, 0.07);
+  }
+  .polaroid-plain::before {
+    display: none;
+  }
+  .polaroid img {
+    @apply w-full h-full object-cover;
+  }
 
   /* ─── Nav ─── */
   .nav-link {
@@ -55,10 +121,9 @@
     pointer-events: all;
   }
   .mobile-nav-link {
-    @apply font-serif text-ink leading-none;
-    font-size: clamp(2.4rem, 8vw, 4rem);
-    font-style: italic;
-    font-weight: 300;
+    @apply font-script text-ink leading-none;
+    font-size: clamp(2.6rem, 9vw, 4.4rem);
+    font-weight: 400;
     transition: opacity 0.2s ease;
   }
   .mobile-nav-link:hover {

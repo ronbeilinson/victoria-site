@@ -8,6 +8,8 @@ import Footer from '../components/Footer.astro';
   Connect the form to Formspree (free — 50 submissions/month):
   1. formspree.io → sign up → New Form → copy the endpoint URL
   2. Replace REPLACE_WITH_YOUR_FORM_ID below
+
+  Resume: upload your PDF to /public/resume.pdf
 -->
 
 <Layout
@@ -17,23 +19,21 @@ import Footer from '../components/Footer.astro';
   <Nav currentPage="/contact" />
 
   <main class="flex-1 px-6 md:px-10 pt-10 pb-20">
+    <h1
+      class="signature text-ink leading-none mb-8"
+      style="font-size: clamp(2.6rem, 6.5vw, 5rem);"
+    >
+      Let's connect.
+    </h1>
+
     <div class="rule mb-10"></div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
 
-      <!-- Left: intro -->
+      <!-- Left: intro + photo -->
       <div class="flex flex-col gap-7">
-        <h1
-          class="font-serif text-ink font-light leading-tight"
-          style="font-size: clamp(2rem, 5vw, 3.8rem); font-style: italic;"
-        >
-          Let's talk about<br />your event.
-        </h1>
-
-        <div class="rule"></div>
-
         <p class="text-ink-mid text-sm font-sans leading-relaxed" style="max-width:38ch; letter-spacing:0.01em;">
-          Whether you have a full brief or just a feeling — reach out. I take on a limited number of projects each year to make sure every client gets my full attention.
+          Whether you're planning an event, exploring a partnership, or simply want to say hello, I'd love to hear from you.
         </p>
 
         <div class="flex flex-col gap-5 text-sm font-sans">
@@ -45,15 +45,44 @@ import Footer from '../components/Footer.astro';
           </div>
           <div>
             <p class="text-[11px] font-sans text-ink-light tracking-widest uppercase mb-1" style="letter-spacing:0.18em;">Based in</p>
-            <p class="text-ink">New York City, New York</p>
+            <p class="text-ink">New York, New York</p>
           </div>
           <div>
-            <p class="text-[11px] font-sans text-ink-light tracking-widest uppercase mb-1" style="letter-spacing:0.18em;">Available for</p>
+            <p class="text-[11px] font-sans text-ink-light tracking-widest uppercase mb-1" style="letter-spacing:0.18em;">Specialties</p>
             <p class="text-ink leading-relaxed">
-              Conferences &nbsp;·&nbsp; Brand Activations<br />
-              International Events &nbsp;·&nbsp; Private Events
+              Conferences &nbsp;•&nbsp; Executive Retreats &nbsp;•&nbsp; Brand Activations &nbsp;•&nbsp; Experiential Marketing &nbsp;•&nbsp; VIP Hospitality &nbsp;•&nbsp; Global Event Production
             </p>
           </div>
+        </div>
+
+        <!-- Resume download -->
+        <div class="pt-1">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn self-start"
+          >
+            Download My Resume
+            <svg class="inline-block ml-2 mb-0.5" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+              <path d="M5 1v5M5 6l-2-2M5 6l2-2M1 9h8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Photo frame -->
+        <!--
+          Swap src="/headshot.JPG" for a different photo if preferred
+          (e.g. an event candid or location shot).
+        -->
+        <div class="polaroid w-full mt-2" style="max-width: 340px;">
+          <img
+            src="/headshot.JPG"
+            alt="Victoria Tarantino"
+            class="w-full object-cover object-top"
+            style="aspect-ratio: 4/5;"
+            loading="lazy"
+          />
         </div>
       </div>
 
@@ -66,12 +95,12 @@ import Footer from '../components/Footer.astro';
       >
         <div class="flex flex-col gap-1.5">
           <label for="name" class="text-[11px] font-sans text-ink-light tracking-widest uppercase" style="letter-spacing:0.18em;">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your name" class="field" />
+          <input type="text" id="name" name="name" required placeholder="Your Name" class="field" />
         </div>
 
         <div class="flex flex-col gap-1.5">
-          <label for="company" class="text-[11px] font-sans text-ink-light tracking-widest uppercase" style="letter-spacing:0.18em;">Company / Event Type</label>
-          <input type="text" id="company" name="company" placeholder="Conference, brand activation, wedding…" class="field" />
+          <label for="company" class="text-[11px] font-sans text-ink-light tracking-widest uppercase" style="letter-spacing:0.18em;">Company (Optional)</label>
+          <input type="text" id="company" name="company" placeholder="Organization or Company" class="field" />
         </div>
 
         <div class="flex flex-col gap-1.5">
@@ -80,12 +109,17 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="flex flex-col gap-1.5">
-          <label for="message" class="text-[11px] font-sans text-ink-light tracking-widest uppercase" style="letter-spacing:0.18em;">Tell Me About Your Event</label>
-          <textarea id="message" name="message" rows="5" required placeholder="Dates, location, scale, vision…" class="field resize-none"></textarea>
+          <label for="type" class="text-[11px] font-sans text-ink-light tracking-widest uppercase" style="letter-spacing:0.18em;">How Can I Help?</label>
+          <input type="text" id="type" name="type" placeholder="Opportunity, collaboration, event inquiry, networking, speaking engagement..." class="field" />
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label for="message" class="text-[11px] font-sans text-ink-light tracking-widest uppercase" style="letter-spacing:0.18em;">Tell Me More</label>
+          <textarea id="message" name="message" rows="1" required placeholder="Share a few details about your inquiry, project, or opportunity." class="field resize-none" style="overflow-y: hidden;"></textarea>
         </div>
 
         <div class="pt-1">
-          <button type="submit" class="btn">Send Message</button>
+          <button type="submit" class="btn">Get In Touch</button>
         </div>
 
         <p id="form-success" class="hidden text-ink-mid text-sm font-sans">
