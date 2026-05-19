@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+/*
+  Add real photos to /public/images/ and set src on each item.
+  Recommended: consistent 4:5 portrait ratio, 800px+ wide.
+  Leave src empty ('') to show a tinted placeholder.
+*/
+const sections = [
+  {
+    category: 'Conferences',
+    items: [
+      { name: 'Sun Valley Conference',       client: 'Allen & Co',  year: '2019–2023', src: '', bg: '#E9E7E3' },
+      { name: 'Allen & Co Arizona',          client: 'Allen & Co',  year: '2019–2023', src: '', bg: '#ECEAE6' },
+    ],
+  },
+  {
+    category: 'International Events',
+    items: [
+      { name: 'Endeavor Global Summit',      client: 'Endeavor',    year: '2024',       src: '', bg: '#E4E7EA' },
+      { name: 'Endeavor EMEA Forum',         client: 'Endeavor',    year: '2024',       src: '', bg: '#E7EAE4' },
+      { name: 'Endeavor Asia-Pacific',       client: 'Endeavor',    year: '2025',       src: '', bg: '#EAE7E4' },
+    ],
+  },
+  {
+    category: 'Brand Activations & Private Events',
+    items: [
+      { name: 'Brand Activation — NYC',      client: '',            year: '2024',       src: '', bg: '#E9E4EA' },
+      { name: 'Executive Dinner Series',     client: '',            year: '2024',       src: '', bg: '#E4EAE9' },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Gallery — Victoria Tarantino"
+  description="Selected work — conferences, brand activations, and international events."
+>
+  <Nav currentPage="/gallery" />
+
+  <main class="flex-1 px-6 md:px-10 pt-10 pb-20">
+    <div class="rule mb-10"></div>
+
+    <h1
+      class="font-serif text-ink font-light leading-none mb-16 md:mb-20"
+      style="font-size: clamp(2.4rem, 6vw, 5rem); font-style: italic;"
+    >
+      Gallery
+    </h1>
+
+    <!-- fosteratx-style: categories with grids under each -->
+    <div class="flex flex-col gap-16 md:gap-24">
+      {sections.map((section) => (
+        <div>
+          <!-- Category header -->
+          <div class="flex items-center gap-6 mb-8">
+            <p class="text-[11px] font-sans text-ink-mid tracking-widest uppercase shrink-0" style="letter-spacing:0.18em;">
+              {section.category}
+            </p>
+            <div class="rule flex-1"></div>
+          </div>
+
+          <!-- Image grid — 2 col mobile, 3 col desktop -->
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {section.items.map((item) => (
+              <div class="gallery-item flex flex-col gap-2.5 cursor-default">
+                {item.src
+                  ? (
+                    <img
+                      src={item.src}
+                      alt={item.name}
+                      class="gallery-img w-full object-cover"
+                      style="aspect-ratio:4/5;"
+                    />
+                  ) : (
+                    <div
+                      class="gallery-img w-full"
+                      style={`aspect-ratio:4/5; background:${item.bg};`}
+                    ></div>
+                  )
+                }
+                <div>
+                  <p class="text-sm font-sans text-ink leading-snug">{item.name}</p>
+                  {item.client && (
+                    <p class="text-xs font-sans text-ink-light mt-0.5" style="letter-spacing:0.02em;">{item.client}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
