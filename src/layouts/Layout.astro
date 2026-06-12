@@ -5,7 +5,7 @@ interface Props {
 }
 
 const {
-  title = 'Victoria Tarantino — Event Architecture & Brand Experiences',
+  title = 'Victoria Tarantino — Global Events & Experiences',
   description =
     "New York City–based event producer behind the world's most exclusive conferences and international events, including Sun Valley, Allen & Co, and Endeavor Global.",
 } = Astro.props;
@@ -19,7 +19,7 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/VTlogo.png" />
     <title>{title}</title>
 
     <meta property="og:title" content={title} />
@@ -37,7 +37,7 @@ import '../styles/global.css';
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen flex flex-col bg-paper text-ink font-sans">
+  <body class="min-h-screen flex flex-col text-ink font-sans" style="background-image: url('/Background.png'); background-size: cover; background-position: center; background-attachment: fixed;">
     <slot />
   </body>
 

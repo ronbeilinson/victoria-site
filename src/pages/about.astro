@@ -48,13 +48,16 @@ import Footer from '../components/Footer.astro';
               I'm an event producer born and raised in New York City, and I believe the best events do more than look beautiful. They create meaningful moments that leave a lasting impression.
             </p>
             <p>
-              I spent five years producing the <span class="text-ink">Sun Valley Conference</span> and the <span class="text-ink">Arizona Conference</span>, two of the world's most exclusive gatherings of business, media, technology, and political leaders. Working behind the scenes on these events year after year taught me that the smallest details are often the ones that matter most.
+              Over the past decade, I've produced high-touch events and global experiences for leading organizations and VIP clientele across business, media, technology, and luxury sectors.
+            </p>
+            <p>
+              I spent five years producing the <span class="text-ink">Sun Valley Conference</span> and the <span class="text-ink">Arizona Conference</span>, two of the world's most exclusive gatherings of leaders across business, media, technology, and politics. Working behind the scenes on these events year after year taught me that the smallest details are often the ones guests remember most.
             </p>
             <p>
               Most recently, I took my work global as a Global Events Manager at <span class="text-ink">Endeavor Global</span>, leading executive events, brand experiences, and strategic convenings across Europe, Asia, Africa, and the Americas.
             </p>
             <p>
-              Whether it's a thousand-person conference in the mountains, a brand activation in New York City, or my own wedding in the Dominican Republic, I bring the same thoughtful attention to detail, creativity, and calm under pressure to every experience I create.
+              Whether producing a thousand-person conference in the mountains, a brand activation in New York City, or my own wedding in the Dominican Republic, I bring the same thoughtful attention to detail, creativity, and calm under pressure to every experience I create.
             </p>
           </div>
 
@@ -102,19 +105,29 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7">
-        <!-- Replace src="" with real photo paths, e.g. src="/images/family.jpg" -->
         {[
-          { alt: 'Family', bg: '#EAE6DF', src: '/family-1.png' },
-          { alt: 'Behind the scenes', bg: '#E4E7E3', src: '/onlocation.png' },
-          { alt: 'On location', bg: '#E7E3EA', src: '/behind the scenes.png' },
-          { alt: 'Personal', bg: '#E3E6E9', src: '/wedding-1.png' },
+          { alt: 'Paulo, our bullmastiff, in our neighborhood.', bg: '#EAE6DF', src: '/family-1.png' },
+          { alt: 'Buenos Aires, my home away from home for a year and a half.', bg: '#E4E7E3', src: '/palermo.jpeg' },
+          { alt: 'Our wedding in the Dominican Republic. My favorite creative project to date.', bg: '#E7E3EA', src: '/wedding-1.png' },
+          { alt: 'Born and raised in the Bronx. Half Italian, half Dominican. Always in search of the perfect slice.', bg: '#E3E6E9', src: '/pizza.png' },
         ].map((photo) => (
           <div class="polaroid polaroid-plain w-full" style="padding: 0.75rem;">
             {photo.src
-              ? <img src={photo.src} alt={photo.alt} class="w-full object-cover" style="aspect-ratio: 4/5;" />
-              : <div class="w-full flex items-end p-2" style={`aspect-ratio: 4/5; background: ${photo.bg};`}>
-                  <span class="text-[10px] font-sans text-ink-light opacity-60" style="letter-spacing:0.06em;">{photo.alt}</span>
+              ? (
+                <div style="position:relative; aspect-ratio:4/5;">
+                  <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" />
+                  <div class="about-overlay">
+                    <p class="text-[#F7F3EB] text-xs font-sans" style="letter-spacing:0.06em;">{photo.alt}</p>
+                  </div>
                 </div>
+              )
+              : (
+                <div style={`position:relative; aspect-ratio:4/5; background:${photo.bg};`}>
+                  <div class="about-overlay">
+                    <p class="text-[#F7F3EB] text-xs font-sans" style="letter-spacing:0.06em;">{photo.alt}</p>
+                  </div>
+                </div>
+              )
             }
           </div>
         ))}
@@ -126,3 +139,20 @@ import Footer from '../components/Footer.astro';
 
   <Footer />
 </Layout>
+
+<style>
+  .about-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(33, 30, 24, 0.78);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .polaroid:hover .about-overlay {
+    opacity: 1;
+  }
+</style>

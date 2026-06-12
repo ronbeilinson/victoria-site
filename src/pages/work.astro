@@ -17,78 +17,209 @@ import Footer from '../components/Footer.astro';
 const sections = [
   {
     category: 'Conferences & Executive Experiences',
+    scrollable: true,
     items: [
       {
         name: 'Sun Valley Conference',
-        client: 'Allen & Co',
-        year: '2019–2023',
-        description: 'Annual invite-only gathering of the world\'s most influential leaders in media, technology, and finance. Produced end-to-end for five consecutive years.',
-        src: '',
+        client: 'Sun Valley, Idaho',
+        year: '2019–2025',
+        description: 'A private, invitation-only gathering hosted by Allen & Company bringing together leaders across business, media, technology, and finance each summer in Sun Valley. As seen in <a href="https://fortune.com/2023/07/14/what-is-sun-valley-conference-allen-and-company/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;opacity:0.85;">Fortune</a> and <a href="https://www.wsj.com/business/the-secret-retreats-that-have-ceos-vips-and-billionaires-jockeying-for-invites-20b62d3e" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;opacity:0.85;">Wall Street Journal</a>.',
+        src: '/sun valley.jpeg',
         bg: '#E9E7E3',
         href: '',
       },
       {
-        name: 'Allen & Co Arizona Conference',
-        client: 'Allen & Co',
-        year: '2019–2023',
-        description: 'Exclusive winter conference for top executives across investment banking, entertainment, and tech. Full logistics, VIP coordination, and on-site management.',
-        src: '',
+        name: 'Arizona Conference',
+        client: 'Marana, Arizona',
+        year: '2019–2025',
+        description: 'Invitation-only gathering bringing together founders, investors, executives, and emerging leaders across technology and business.',
+        src: '/rz-tusrz-canyon-view-18702-Classic-Hor.jpeg',
         bg: '#ECEAE6',
+        href: '',
+      },
+      {
+        name: 'Endeavor Annual Gala',
+        client: 'New York, New York',
+        year: '2025',
+        description: 'Annual Endeavor Gala bringing together 500+ entrepreneurs, investors, mentors, and business leaders from 45+ countries across the global Endeavor network, with activations from companies within its ecosystem.',
+        src: '/12_05_25Endeavor-Gala0539.jpg',
+        bg: '#E4E7EA',
+        href: '',
+      },
+      {
+        name: 'Masters Tournament',
+        client: 'Augusta, Georgia',
+        year: '2024–2025',
+        description: 'Allen & Company hospitality programming at the Masters Tournament and Berckmans Place, delivering fully curated guest experiences for a small group of executives and clients.',
+        src: '/masters.jpeg',
+        bg: '#E7EAE4',
+        href: '',
+      },
+      {
+        name: 'US Open',
+        client: 'New York, New York',
+        year: '2019–2025',
+        description: 'US Open hospitality experience through Allen & Company, managing a private suite and courtside access across all sessions with fully curated guest programming and amenities.',
+        src: '/usopen1.jpeg',
+        bg: '#EAE7E4',
+        href: '',
+      },
+      {
+        name: 'Executive Retreat',
+        company: 'Allen & Company',
+        client: 'Wanship, Utah',
+        year: '2024',
+        description: 'Invitation-only executive retreat through Allen & Company at The Lodge at Blue Sky for a group of 30 managing directors and select clients and investors, designed to deepen relationships through curated programming, strategic discussions, and shared experiences.',
+        src: '/bsk_exteriors_resort_2018_012.jpg',
+        bg: '#E4EAE7',
         href: '',
       },
     ],
   },
   {
     category: 'Global Programs',
+    scrollable: true,
     items: [
       {
-        name: 'Endeavor Global Summit',
-        client: 'Endeavor',
-        year: '2024',
-        description: 'Global leadership summit bringing together Endeavor\'s network of high-impact entrepreneurs, mentors, and investors across continents.',
-        src: '',
+        name: 'Outliers Retreat',
+        client: 'Comporta, Portugal',
+        year: '2025–2026',
+        description: 'Invite-only Endeavor Outliers Retreat bringing together high-impact entrepreneurs for a multi-day, curated program focused on connection, conversation, and leadership exchange.',
+        src: '/endeavor1d-79.jpg',
         bg: '#E4E7EA',
         href: '',
       },
       {
-        name: 'Endeavor EMEA Forum',
-        client: 'Endeavor',
-        year: '2024',
-        description: 'Regional forum across Europe, the Middle East, and Africa — coordinating venue, programming, and hospitality across multiple cities.',
-        src: '',
-        bg: '#E7EAE4',
+        name: 'Singapore: International Selection Panel',
+        client: 'Singapore',
+        year: 'February 2026',
+        description: 'International Selection Panels (ISPs), the global evaluation process through which entrepreneurs are selected to join the Endeavor network, bringing together candidates and business leaders across international markets.',
+        src: '/[kennethpower]EndevorISPSG2026D1(Express)-18 (1).jpg',
+        bg: '#E9E7E3',
         href: '',
       },
       {
-        name: 'Endeavor Asia-Pacific',
-        client: 'Endeavor',
-        year: '2025',
-        description: 'Executive events spanning the Asia-Pacific region, including keynotes, working dinners, and site visits across multiple countries.',
-        src: '',
-        bg: '#EAE7E4',
+        name: 'Stellenbosch: International Selection Panel',
+        client: 'South Africa',
+        year: 'December 2025',
+        description: 'International Selection Panels (ISPs), the global evaluation process through which entrepreneurs are selected to join the Endeavor network, bringing together candidates and business leaders across international markets.',
+        src: '/EndeavorISPStellenbosch-7807167.jpg',
+        objectPosition: 'center top',
+        bg: '#ECEAE6',
+        href: '',
+      },
+      {
+        name: 'Cambridge: International Selection Panel',
+        client: 'United Kingdom',
+        year: 'September 2025',
+        description: 'International Selection Panels (ISPs), the global evaluation process through which entrepreneurs are selected to join the Endeavor network, bringing together candidates and business leaders across international markets.',
+        src: '/_82A7770.jpg',
+        bg: '#E4E7EA',
+        href: '',
+      },
+      {
+        name: 'Warsaw: International Selection Panel',
+        client: 'Poland',
+        year: 'June 2025',
+        description: 'International Selection Panels (ISPs), the global evaluation process through which entrepreneurs are selected to join the Endeavor network, bringing together candidates and business leaders across international markets.',
+        src: '/23.06.2025_Endeavor_Day_One-126.jpg',
+        bg: '#E7EAE4',
         href: '',
       },
     ],
   },
   {
     category: 'Brand Activations & Private Gatherings',
+    scrollable: true,
     items: [
       {
-        name: 'Brand Activation — NYC',
-        client: '',
-        year: '2024',
-        description: 'Street-level brand experience in New York City — spatial design, vendor management, guest journey, and day-of production.',
-        src: '',
+        name: 'Baked by Melissa — Come Hungry Book Launch',
+        client: 'New York, New York',
+        year: 'January 2024',
+        description: 'Baked by Melissa\'s "Come Hungry" book launch through Forbes Functions featuring a curated gifting market and menu inspired by recipes from the book. <a href="https://www.instagram.com/p/C2X9P4lPiAW/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;opacity:0.85;">View on Instagram</a>.',
+        src: '/DSC_3183.jpg',
         bg: '#E9E4EA',
         href: '',
       },
       {
-        name: 'Executive Dinner Series',
-        client: '',
-        year: '2024',
-        description: 'Intimate curated dinner series for C-suite guests — venue, menu curation, seating, and bespoke atmosphere design.',
-        src: '',
+        name: 'Eileen Fisher — Sustainable Fashion Panel',
+        client: 'Brooklyn, NY',
+        year: 'April 2019',
+        description: 'Eileen Fisher Sustainable Fashion Panel hosted at the Eileen Fisher Brooklyn store, bringing together leaders in sustainable fashion for an intimate discussion on industry innovation and impact.',
+        src: '/856E464B-D65D-402B-8CBE-60A4A79E6C89_1_102_o.jpeg',
+        bg: '#E7EAE4',
+        href: '',
+      },
+      {
+        name: 'Jane Iredale — Eye to Eye Edit Product Launch',
+        client: 'New York, New York',
+        year: 'September 2024',
+        description: 'Jane Iredale "Eye to Eye Edit" product launch through Forbes Functions featuring immersive installations inspired by each shade alongside curated food and beverage programming. <a href="https://www.instagram.com/p/DAJmADASbEn/?img_index=10" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;opacity:0.85;">View on Instagram</a>.',
+        src: '/Jane Iredale Eye Edit.png',
         bg: '#E4EAE9',
+        href: '',
+      },
+      {
+        name: 'Cherry on Top — Private Party',
+        client: 'New York, NY',
+        year: 'October 2024',
+        description: 'Private "Cherry on Top" celebration through Forbes Functions featuring a cherry-themed environment with custom installations, branded details, and curated candy bar experience. <a href="https://www.instagram.com/p/DCPUo1kxciM/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;opacity:0.85;">View on Instagram</a>.',
+        src: '/cherry.jpeg',
+        bg: '#EAE4E7',
+        href: '',
+      },
+      {
+        name: 'WeWoreWhat — Western Holiday Party',
+        client: 'Brooklyn, New York',
+        year: 'December 2024',
+        description: 'WeWoreWhat holiday party through Forbes Functions featuring a Western-inspired theme with curated gifting, personalized touches, and experiential activations. <a href="https://www.instagram.com/p/DDPsWUMp8Ok/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;opacity:0.85;">View on Instagram</a>.',
+        src: '/weworewhat.png',
+        bg: '#E4E7EA',
+        href: '',
+      },
+      {
+        name: 'Our Wedding',
+        client: 'Dominican Republic',
+        year: 'April 2026',
+        description: 'Multi-day wedding celebration in Casa de Campo, Dominican Republic featuring a fully curated guest experience across welcome events, wedding day programming, and post-celebration activations including personalized details and immersive guest moments.',
+        src: '/wedding.jpg',
+        bg: '#EAE9E4',
+        href: '',
+      },
+      {
+        name: 'Our Engagement Party',
+        client: 'Brooklyn, NY',
+        year: 'March 2025',
+        description: 'Our engagement party in Williamsburg, Brooklyn featuring an Italian-inspired pizza party with custom cocktails, personalized details including some inspired by our dog Paulo, and playful floral installations with tomato accents.',
+        src: '/engagementparty.jpg',
+        bg: '#E9E4EA',
+        href: '',
+      },
+      {
+        name: 'My Bridal Shower',
+        client: 'Brooklyn, NY',
+        year: 'February 2026',
+        description: 'My bridal shower in Williamsburg, Brooklyn featuring lush florals, photo installation, and a cookie activation as part of a personalized guest experience.',
+        src: '/shower.jpg',
+        bg: '#EAE4E9',
+        href: '',
+      },
+      {
+        name: 'Private Dinner & Party — Crane Club',
+        client: 'New York, NY',
+        year: 'June 2025',
+        description: 'Private celebration at Crane Club through Forbes Functions featuring an intimate dinner followed by a larger reception, with curated florals, cherry-inspired details, and immersive guest experiences throughout the evening. <a href="https://www.instagram.com/p/DLAaxLXR84E/?img_index=1" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;opacity:0.85;">View on Instagram</a>.',
+        src: '/lexie2.jpg',
+        bg: '#E4E9EA',
+        href: '',
+      },
+      {
+        name: 'Private Party — Roey\'s',
+        client: 'New York, NY',
+        year: 'April 2025',
+        description: 'Private celebration at Roey\'s through Forbes Functions featuring personalized favors, interactive games, florals, and thoughtful details designed to create a memorable guest experience. <a href="https://www.instagram.com/p/DI_2a6iuhIl/?img_index=7" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;opacity:0.85;">View on Instagram</a>.',
+        src: '/liz.jpg',
+        bg: '#EAE7E4',
         href: '',
       },
     ],
@@ -116,7 +247,7 @@ const sections = [
 
       <!-- Upload resume.pdf to /public/ and this button will work -->
       <a
-        href="/resume.pdf"
+        href="/Victoria_Tarantino_Resume_626.pdf"
         target="_blank"
         rel="noopener noreferrer"
         class="btn shrink-0 self-start sm:self-auto"
@@ -140,27 +271,27 @@ const sections = [
             <div class="rule flex-1"></div>
           </div>
 
-          <!-- Grid: 2 col mobile, 3 col desktop -->
-          <div class="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+          <!-- Grid or horizontal scroll -->
+          <div class={section.scrollable ? 'scroll-row' : 'grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4'}>
             {section.items.map((item) => {
               const Wrapper = item.href ? 'a' : 'div';
               const wrapperProps = item.href
                 ? { href: item.href, target: '_blank', rel: 'noopener noreferrer' }
                 : {};
               return (
-                <div class="work-item flex flex-col gap-2.5 cursor-default">
+                <div class={`work-item flex flex-col gap-2.5 cursor-default${section.scrollable ? ' scroll-card' : ''}`}>
                   <div class="polaroid w-full relative overflow-hidden group">
                     {item.src
                       ? (
-                        <div style="aspect-ratio:1/1; position:relative;">
+                        <div class="w-full" style="aspect-ratio:1/1; position:relative;">
                           <img
                             src={item.src}
                             alt={item.name}
-                            class="w-full h-full object-cover"
+                            style={`position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:${item.objectPosition ?? 'center'};${(item.zoom || item.offsetY) ? ` transform:scale(${item.zoom ?? 1}) translateY(${item.offsetY ?? 0}%);` : ''}`}
                           />
                           <!-- Hover overlay -->
                           <div class="work-overlay">
-                            <p class="text-[#F7F3EB] text-xs font-sans leading-relaxed" style="letter-spacing:0.01em;">{item.description}</p>
+                            <p class="text-[#F7F3EB] text-xs font-sans leading-relaxed" style="letter-spacing:0.01em;" set:html={item.description} />
                             {item.href && (
                               <p class="text-[#F7F3EB] text-[10px] font-sans tracking-widest uppercase mt-3 opacity-70" style="letter-spacing:0.18em;">
                                 Open ↗
@@ -175,7 +306,7 @@ const sections = [
                         >
                           <!-- Hover overlay on placeholder -->
                           <div class="work-overlay">
-                            <p class="text-[#F7F3EB] text-xs font-sans leading-relaxed" style="letter-spacing:0.01em;">{item.description}</p>
+                            <p class="text-[#F7F3EB] text-xs font-sans leading-relaxed" style="letter-spacing:0.01em;" set:html={item.description} />
                             {item.href && (
                               <p class="text-[#F7F3EB] text-[10px] font-sans tracking-widest uppercase mt-3 opacity-70" style="letter-spacing:0.18em;">
                                 Open ↗
@@ -186,13 +317,16 @@ const sections = [
                       )
                     }
                   </div>
-                  <div>
-                    <p class="text-[11px] font-sans text-ink uppercase leading-snug mt-1" style="letter-spacing:0.14em;">{item.name}</p>
-                    {item.client && (
-                      <p class="text-xs font-sans text-ink-light mt-0.5" style="letter-spacing:0.02em;">{item.client} · {item.year}</p>
+                  <div class="mt-2">
+                    <p class="text-xs font-sans text-ink leading-snug" style="letter-spacing:0.02em;">{item.name}</p>
+                    {item.company && (
+                      <p class="text-[11px] font-sans text-ink-mid mt-0.5" style="letter-spacing:0.02em;">{item.company}</p>
                     )}
-                    {!item.client && (
-                      <p class="text-xs font-sans text-ink-light mt-0.5" style="letter-spacing:0.02em;">{item.year}</p>
+                    {item.client && (
+                      <p class="text-[11px] font-sans text-ink-light mt-0.5" style="letter-spacing:0.02em;">{item.client}</p>
+                    )}
+                    {item.year && (
+                      <p class="text-[11px] font-sans text-ink-light" style="letter-spacing:0.02em;">{item.year}</p>
                     )}
                   </div>
                 </div>
@@ -207,11 +341,11 @@ const sections = [
     <div class="rule mt-20 mb-10"></div>
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
       <p class="text-ink-mid text-sm font-sans" style="max-width:44ch; letter-spacing:0.01em;">
-        Want to see the full picture? Download my resume or get in touch directly.
+        For the full picture, download my resume or get in touch.
       </p>
       <div class="flex flex-wrap gap-4">
         <a
-          href="/resume.pdf"
+          href="/Victoria_Tarantino_Resume_626.pdf"
           target="_blank"
           rel="noopener noreferrer"
           class="btn shrink-0"
@@ -232,6 +366,29 @@ const sections = [
 </Layout>
 
 <style>
+  .scroll-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
+  }
+  .scroll-row::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-row.dragging {
+    cursor: grabbing;
+  }
+  .scroll-card {
+    width: calc((100vw - 48px - 2 * 0.75rem) / 3);
+    flex-shrink: 0;
+  }
+  @media (min-width: 768px) {
+    .scroll-row { gap: 1rem; }
+    .scroll-card { width: calc((100vw - 80px - 3 * 1rem) / 4); }
+  }
   .work-overlay {
     position: absolute;
     inset: 0;
@@ -247,3 +404,36 @@ const sections = [
     opacity: 1;
   }
 </style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.scroll-row').forEach((row) => {
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    row.addEventListener('mousedown', (e) => {
+      isDown = true;
+      row.classList.add('dragging');
+      startX = e.pageX - row.offsetLeft;
+      scrollLeft = row.scrollLeft;
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDown = false;
+      row.classList.remove('dragging');
+    });
+
+    row.addEventListener('mouseleave', () => {
+      isDown = false;
+      row.classList.remove('dragging');
+    });
+
+    row.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - row.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      row.scrollLeft = scrollLeft - walk;
+    });
+  });
+</script>
